@@ -43,7 +43,7 @@ A professional Flask web application for real-time face detection using webcam i
 5. **Open in browser**
    visit http://127.0.0.1:5000
 
---
+---
 
 ## Usage
 
@@ -52,7 +52,7 @@ A professional Flask web application for real-time face detection using webcam i
 - Upload images to detect faces by clicking **"Upload Image"**.
 - Detected faces are displayed with bounding boxes and confidence percentages.
 
---
+---
 
 ## Technologies Used
 
@@ -62,13 +62,13 @@ A professional Flask web application for real-time face detection using webcam i
 - **Canvas API** for drawing bounding boxes
 - **WebRTC / getUserMedia API** for webcam access
 
---
+---
 
 ## License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
---
+---
 
 ## Contact
 
