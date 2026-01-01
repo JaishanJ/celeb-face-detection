@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Celebrity Face Recognition</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Celebrity Face Recognition</h1>
+
+      <!-- Controls -->
+      <div class="controls" id="controls">
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+          <label class="drop-zone">
+            <input type="file" name="image" accept="image/*" hidden />
+            <span>Drag & drop an image or click to upload</span>
+          </label>
+
+          <div id="preview-container" style="display: none; position: relative">
+            <img id="preview-image" />
+            <canvas id="preview-canvas"></canvas>
+            <div>
+              <button type="button" id="detect-btn" class="btn">Detect</button>
+              <button type="button" id="replace-btn" class="btn">
+                Replace file
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <button id="webcam-btn" class="btn btn-primary" type="button">
+          Start Webcam
+        </button>
+      </div>
+
+      <!-- Spinner Overlay -->
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Detecting…</p>
+      </div>
+
+      <!-- Webcam Container -->
+      <div class="webcam-container" id="webcam-container" style="display: none">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+        <button id="close-webcam-btn" class="btn btn-danger" type="button">
+          Close Webcam
+        </button>
+      </div>
+
+      <!-- Uploaded Image Results -->
+      {% if filename %}
+      <div class="image-container">
+        <img
+          id="uploaded-image"
+          src="{{ url_for('static', filename='uploads/' + filename) }}"
+        />
+        {% for face in results %}
+        <div
+          class="bounding-box"
+          style="
+            --top: {{ face.top }}%;
+            --left: {{ face.left }}%;
+            --width: {{ face.width }}%;
+            --height: {{ face.height }}%;
+          "
+        >
+          <span>{{ face.name }} ({{ face.confidence }}%)</span>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    {% if results %}
+    <script type="application/json" id="faces-data">
+      {{ results | tojson }}
+    </script>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
