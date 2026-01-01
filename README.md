@@ -26,8 +26,8 @@ A professional Flask web application for real-time face detection using webcam i
 ## Installation
 
 1. **Clone the repository:**
-   git clone https://github.com/YOUR_USERNAME/flask-face-detection.git
-   cd flask-face-detection
+   git clone https://github.com/JaishanJ/celeb-face-detection.git
+   cd celeb-face-detection
 
 2. **Create a virtual environment (recommended)**
    py -m venv venv
@@ -52,6 +52,8 @@ A professional Flask web application for real-time face detection using webcam i
 - Upload images to detect faces by clicking **"Upload Image"**.
 - Detected faces are displayed with bounding boxes and confidence percentages.
 
+--
+
 ## Technologies Used
 
 - **Python 3**
@@ -60,9 +62,13 @@ A professional Flask web application for real-time face detection using webcam i
 - **Canvas API** for drawing bounding boxes
 - **WebRTC / getUserMedia API** for webcam access
 
+--
+
 ## License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+--
 
 ## Contact
 
