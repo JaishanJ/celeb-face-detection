@@ -26,7 +26,7 @@ A professional Flask web application for real-time face detection using webcam i
 ## Installation
 
 1. **Clone the repository:**
-   git clone https://github.com/JaishanJ/celeb-face-detection.git
+   git clone https://github.com/JaishanJ/Celeb-Face-Detection.git
    cd celeb-face-detection
 
 2. **Create a virtual environment (recommended)**
